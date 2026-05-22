@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kalkulacka</title>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">                                                                                            <!-- --- Statická navigační lišta --- -->
+            <div class="nav-header">
+                <h2><i>~Navigace~</i></h2>
+            </div>
+
+            <a class="nav-item" href="index.html">                                                                      <!-- Navigační odkaz na index.html -->
+                <div class="reveal-dot"></div>
+                <svg class="nav-icon" viewBox="0 0 20 20"><path d="M10 2L2 8.5V18h6v-5h4v5h6V8.5L10 2z"/></svg>
+                <span class="nav-label">Domů</span>
+            </a>
+
+            <a class="nav-item active" href="Kalkulacka.html">                                                          <!-- Navigační odkaz na Kalkulacka.html -->
+                <div class="reveal-dot"></div>
+                <svg class="nav-icon" viewBox="0 0 20 20"><rect x="3" y="2" width="14" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="5.5" y="4.5" width="9" height="3" rx="0.5"/><circle cx="6.5" cy="11" r="1"/><circle cx="10" cy="11" r="1"/><circle cx="13.5" cy="11" r="1"/><circle cx="6.5" cy="14" r="1"/><circle cx="10" cy="14" r="1"/><circle cx="13.5" cy="14" r="1"/></svg>
+                <span class="nav-label">Kalkulačka</span>
+            </a>
+
+            <a class="nav-item" href="Prevodnik.html">                                                                  <!-- Navigační odkaz na Prevodnik.html -->
+                <div class="reveal-dot"></div>
+                <svg class="nav-icon" viewBox="0 0 20 20"><path d="M3 6h11M10 3l4 3-4 3M17 14H6M10 11l-4 3 4 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="nav-label">Převodník</span>
+            </a>
+        </nav>                                                                                                          <!-- ---------------------------------------------- -->
+    </header>
+
+    <div class="content">
+        <main class="page">
+            <div class="calculator window">
+                <div class="title-bar">kalkulačka.exe</div>
+
+                <div class="display">
+                    <div class="mode-header">
+                        <span class="mode-label">Standardní</span>
+                    </div>
+
+                    <div class="expression" id="expression"></div>
+                    <div class="result" id="result">0</div>
+                </div>
+
+                <div class="buttons">                                                                                   <!-- --- Tlačítka kalkulačky --- -->
+                    <button class="btn-function" id="btn-openBracket" data-key="(">(</button>
+                    <button class="btn-function" id="btn-closeBracket" data-key=")">)</button>
+                    <button class="btn-function" id="btn-c" data-key="c">C</button>
+                    <button class="btn-function btn-backspace" id="btn-back" data-key="Backspace">⌫</button>
+
+                    <button class="btn-function" id="btn-inv" data-key="">¹/x</button>
+                    <button class="btn-function" id="btn-sq" data-key="">x²</button>
+                    <button class="btn-function" id="btn-sqrt" data-key="">√</button>
+                    <button class="btn-operator" id="btn-div" data-key="/">÷</button>
+
+                    <button class="btn-standard" id="btn-7" data-key="7">7</button>
+                    <button class="btn-standard" id="btn-8" data-key="8">8</button>
+                    <button class="btn-standard" id="btn-9" data-key="9">9</button>
+                    <button class="btn-operator" id="btn-mul" data-key="*">×</button>
+
+                    <button class="btn-standard" id="btn-4" data-key="4">4</button>
+                    <button class="btn-standard" id="btn-5" data-key="5">5</button>
+                    <button class="btn-standard" id="btn-6" data-key="6">6</button>
+                    <button class="btn-operator" id="btn-sub" data-key="-">−</button>
+
+                    <button class="btn-standard" id="btn-1" data-key="1">1</button>
+                    <button class="btn-standard" id="btn-2" data-key="2">2</button>
+                    <button class="btn-standard" id="btn-3" data-key="3">3</button>
+                    <button class="btn-operator" id="btn-add" data-key="+">+</button>
+
+                    <button class="btn-standard btn-zero" id="btn-0" data-key="0">0</button>
+                    <button class="btn-standard" id="btn-dot" data-key=".">.</button>
+                    <button class="btn-equals" id="btn-eq" data-key="Enter">=</button>
+                </div>                                                                                                  <!-- ---------------------------------------------- -->
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                &copy; Jakub Reimer 2026<br>                                                                                 <!-- Informace o "školní projektovosti" -->
+                Jedná se o školní projekt.<br>
+            </p>
+        </footer>
+    </div>
+
+    <div class="activation-watermark">                                                                                  <!-- Activate windows watermark -->
+        <h1>Activate Windows</h1>
+        <p>Go to the Settings to activate Windows</p>
+    </div>
+
+    <script src="Kalkulacka.js"></script>                                                                               <!-- Script pro kalkulačku -->
+
+    <script src="Navbar.js"></script>                                                                                   <!-- Navbar script -->
+</body>
+</html>
