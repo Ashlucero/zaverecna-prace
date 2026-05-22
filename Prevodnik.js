@@ -75,13 +75,13 @@ function updateConversion() {                                                   
     toAmount.value = formatOutput(converted);
 }
 
-function setFromAmount(value) {
+function setFromAmount(value) {                                                                                   // Sets conversion ammount
     const normalized = normalizeInput(value);
     fromAmount.value = normalized === '' ? '0' : normalized;
     updateConversion();
 }
 
-function appendDigit(digit) {
+function appendDigit(digit) {                                                                                     // Pushes a digit to the buffer
     let current = fromAmount.value;
     if (current === '0' && digit !== '.') {
         current = '';
@@ -94,7 +94,7 @@ function appendDigit(digit) {
     setFromAmount(current + digit);
 }
 
-function backspaceInput() {
+function backspaceInput() {                                                                                       // Enables the use of backspace
     const current = fromAmount.value;
     if (current.length <= 1) {
         setFromAmount('0');
@@ -103,17 +103,17 @@ function backspaceInput() {
     setFromAmount(current.slice(0, -1));
 }
 
-function clearEntry() {
+function clearEntry() {                                                                                           // Clears the buffer
     setFromAmount('0');
 }
 
-function clearAll() {
+function clearAll() {                                                                                             // Resets the buffer
     fromCurrency.value = defaults.fromCurrency;
     toCurrency.value = defaults.toCurrency;
     setFromAmount(defaults.amount);
 }
 
-function swapCurrencies() {
+function swapCurrencies() {                                                                                       // Swaps the two conversion buffers
     const currentFrom = fromCurrency.value;
     fromCurrency.value = toCurrency.value;
     toCurrency.value = currentFrom;
@@ -125,7 +125,7 @@ function swapCurrencies() {
     updateConversion();
 }
 
-fromAmount.addEventListener('input', () => {
+fromAmount.addEventListener('input', () => {                                                         // Input listeners and processing
     const normalized = normalizeInput(fromAmount.value);
     if (normalized !== fromAmount.value) {
         fromAmount.value = normalized;
@@ -149,7 +149,7 @@ numberButtons.forEach(id => {
     });
 });
 
-document.getElementById('btn-eq').addEventListener('click', updateConversion);
+document.getElementById('btn-eq').addEventListener('click', updateConversion);                            // ----------------------------------------------
 
 const keyMap = {                                                                                                   // Keymapping
     '0': 'btn-0',
